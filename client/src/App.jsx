@@ -1,4 +1,3 @@
-
 import HomePage from "./routes/Homepage/HomePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ListPage from "./routes/ListPage/ListPage";
@@ -9,6 +8,7 @@ import Register from "./routes/Register/Register";
 import Login from './routes/Login/Login';
 import ProfileUpdatePage from './routes/ProfileUpdatePage/ProfileUpdatePage';
 import NewPostPage from "./routes/NewPostPage/NewPostPage";
+import { singlePageLoader } from "./lib/loaders";
 
 
 function App() {
@@ -26,7 +26,8 @@ function App() {
       },
       {
         path: "/:id",
-        element: <SinglePage/>
+        element: <SinglePage/>,
+        loader: singlePageLoader
       },
       {
         path: "/register",

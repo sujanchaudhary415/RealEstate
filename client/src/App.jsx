@@ -8,7 +8,7 @@ import Register from "./routes/Register/Register";
 import Login from './routes/Login/Login';
 import ProfileUpdatePage from './routes/ProfileUpdatePage/ProfileUpdatePage';
 import NewPostPage from "./routes/NewPostPage/NewPostPage";
-import { singlePageLoader } from "./lib/loaders";
+import { listPageLoader, singlePageLoader } from "./lib/loaders";
 
 
 function App() {
@@ -22,12 +22,13 @@ function App() {
       },
       {
         path: "/list",
-        element: <ListPage/>
+        element: <ListPage/>,
+        loader:listPageLoader,
       },
       {
         path: "/:id",
         element: <SinglePage/>,
-        loader: singlePageLoader
+        loader: singlePageLoader,
       },
       {
         path: "/register",

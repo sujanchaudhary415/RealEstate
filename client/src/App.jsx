@@ -8,7 +8,7 @@ import Register from "./routes/Register/Register";
 import Login from './routes/Login/Login';
 import ProfileUpdatePage from './routes/ProfileUpdatePage/ProfileUpdatePage';
 import NewPostPage from "./routes/NewPostPage/NewPostPage";
-import { listPageLoader, singlePageLoader } from "./lib/loaders";
+import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders";
 
 
 function App() {
@@ -47,7 +47,8 @@ function App() {
       element: <RequireAuth/>,
       children: [{
         path: "/profile",
-        element: <ProfilePage />
+        element: <ProfilePage />,
+        loader:profilePageLoader,
       },
       {
         path: "/profile/update",
